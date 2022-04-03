@@ -31,6 +31,8 @@ public class ManagerCartasModoC1 : MonoBehaviour
         recorde = PlayerPrefs.GetInt("recordeModoC1", 0);
         GameObject.Find("ultimaJogada").GetComponent<Text>().text = "Ultimo Jogo-" + ultimoJogo;
         GameObject.Find("recorde").GetComponent<Text>().text = "Recorde-" + recorde;
+        PlayerPrefs.SetInt("modoAnterior", 1);
+
     }
 
     // Update is called once per frame
@@ -67,6 +69,7 @@ public class ManagerCartasModoC1 : MonoBehaviour
 
 
                         PlayerPrefs.SetInt("Jogadas", numTentativas);
+
                         SceneManager.LoadScene("Lab3_vitoria");
                     }
                 }

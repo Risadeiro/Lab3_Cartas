@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TileModoC1 : MonoBehaviour
+public class TileModoC2 : MonoBehaviour
 {
     private bool tileRevelada = false;  // indicador da carta virada ou não
     public Sprite originalCarta;        // Sprite da carta desejada
@@ -35,7 +35,7 @@ public class TileModoC1 : MonoBehaviour
         //    EscondeCarta();
         //else
         //    RevelaCarta();  //aqui nao se guardava numero de cartas
-        GameObject.Find("gameManagerModoC1").GetComponent<ManagerCartasModoC1>().CartaSelecionada(gameObject);
+        GameObject.Find("gameManagerModoC2").GetComponent<ManagerCartasModoC2>().CartaSelecionada(gameObject);
     }
 
     public void EscondeCarta()
