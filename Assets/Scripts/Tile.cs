@@ -11,8 +11,7 @@ public class Tile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        EscondeCarta();
-
+        EscondeCarta();     // chama a função para esconder as cartas renderizadas
     }
 
     // Update is called once per frame
@@ -28,25 +27,25 @@ public class Tile : MonoBehaviour
         //    EscondeCarta();
         //else
         //    RevelaCarta();  //aqui nao se guardava numero de cartas
-        GameObject.Find("gameManager").GetComponent<ManagerCartas>().CartaSelecionada(gameObject);
+        GameObject.Find("gameManager").GetComponent<ManagerCartas>().CartaSelecionada(gameObject);  //executa a função cartaselecionada quando a carta é clicada
     }
 
     public void EscondeCarta()
     {
-        GetComponent<SpriteRenderer>().sprite = backCarta;
+        GetComponent<SpriteRenderer>().sprite = backCarta;      //função para renderizara parte de tras da carta renderizada
       
-        tileRevelada = false;
+        tileRevelada = false;   //seta o status da carta como nao revelada
     }
 
     public void RevelaCarta()
     {
-        GetComponent<SpriteRenderer>().sprite = originalCarta;
-        tileRevelada = true;
+        GetComponent<SpriteRenderer>().sprite = originalCarta;          // função para renderizar aparta da frente da carta
+        tileRevelada = true;            //seta o status da carta como visivel
     }
 
     public void setCartaOriginal(Sprite novaCarta)
     {
-        originalCarta = novaCarta;
+        originalCarta = novaCarta;  // seta o valor do objeto carta 
     }
 
 

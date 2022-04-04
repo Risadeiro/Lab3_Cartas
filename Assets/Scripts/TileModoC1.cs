@@ -8,18 +8,18 @@ public class TileModoC1 : MonoBehaviour
     public Sprite originalCarta;        // Sprite da carta desejada
     public Sprite backCartaVermelho;            //Sprite do avesso Vermelho da carta
     public Sprite backCartaAzul;            //Sprite do avesso Azul da carta
-    private int linha;
+    private int linha;              // linha da carta
     // Start is called before the first frame update
     void Start()
     {
         print("LINHAA: " + linha);
         if(linha == 0)
         {
-            EscondeCarta();
+            EscondeCarta(); //mostra costa da carta vermelha
         }
         else
         {
-            EscondeCartaAzul();
+            EscondeCartaAzul(); //mostra costa do baralho azul
         }
     }
 
@@ -35,30 +35,30 @@ public class TileModoC1 : MonoBehaviour
         //    EscondeCarta();
         //else
         //    RevelaCarta();  //aqui nao se guardava numero de cartas
-        GameObject.Find("gameManagerModoC1").GetComponent<ManagerCartasModoC1>().CartaSelecionada(gameObject);
+        GameObject.Find("gameManagerModoC1").GetComponent<ManagerCartasModoC1>().CartaSelecionada(gameObject); //executa a função cartaselecionada quando a carta é clicada
     }
 
-    public void EscondeCarta()
+    public void EscondeCarta()  //mostra costa da carta vermelha
     {
         GetComponent<SpriteRenderer>().sprite = backCartaVermelho;
 
         tileRevelada = false;
     }
 
-    public void EscondeCartaAzul()
+    public void EscondeCartaAzul()//mostra costa da carta azul
     {
         GetComponent<SpriteRenderer>().sprite = backCartaAzul;
 
         tileRevelada = false;
     }
 
-    public void RevelaCarta()
+    public void RevelaCarta()   //mostra frente da carta
     {
         GetComponent<SpriteRenderer>().sprite = originalCarta;
         tileRevelada = true;
     }
 
-    public void setCartaOriginal(Sprite novaCarta, int linhaParam)
+    public void setCartaOriginal(Sprite novaCarta, int linhaParam)  //define o vlor da carta e qual tipo de carta sera
     {
         originalCarta = novaCarta;
         linha = linhaParam;
